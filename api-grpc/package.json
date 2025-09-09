@@ -1,0 +1,20 @@
+{
+  "name": "api-grpc",
+  "version": "1.0.0",
+  "description": "API gRPC para gerenciamento de filmes, atores e gêneros",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.7",
+    "@grpc/proto-loader": "^0.7.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["grpc", "api", "filmes", "atores", "generos"],
+  "author": "",
+  "license": "MIT"
+}

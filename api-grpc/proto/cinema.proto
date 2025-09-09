@@ -1,0 +1,139 @@
+syntax = "proto3";
+
+package cinema;
+
+// Mensagens para Filme
+message Filme {
+  int32 id = 1;
+  string titulo = 2;
+  int32 ano_lancamento = 3;
+  int32 genero_id = 4;
+  Genero genero = 5;
+  repeated Ator atores = 6;
+}
+
+message CreateFilmeRequest {
+  string titulo = 1;
+  int32 ano_lancamento = 2;
+  int32 genero_id = 3;
+}
+
+message UpdateFilmeRequest {
+  int32 id = 1;
+  string titulo = 2;
+  int32 ano_lancamento = 3;
+  int32 genero_id = 4;
+}
+
+message GetFilmeRequest {
+  int32 id = 1;
+}
+
+message DeleteFilmeRequest {
+  int32 id = 1;
+}
+
+message AddAtorToFilmeRequest {
+  int32 filme_id = 1;
+  int32 ator_id = 2;
+}
+
+message GetFilmeAtoresRequest {
+  int32 filme_id = 1;
+}
+
+message FilmeList {
+  repeated Filme filmes = 1;
+}
+
+message AtorList {
+  repeated Ator atores = 1;
+}
+
+// Mensagens para Ator
+message Ator {
+  int32 id = 1;
+  string nome = 2;
+  string data_nascimento = 3;
+}
+
+message CreateAtorRequest {
+  string nome = 1;
+  string data_nascimento = 2;
+}
+
+message UpdateAtorRequest {
+  int32 id = 1;
+  string nome = 2;
+  string data_nascimento = 3;
+}
+
+message GetAtorRequest {
+  int32 id = 1;
+}
+
+message DeleteAtorRequest {
+  int32 id = 1;
+}
+
+// Mensagens para Genero
+message Genero {
+  int32 id = 1;
+  string nome = 2;
+}
+
+message CreateGeneroRequest {
+  string nome = 1;
+}
+
+message UpdateGeneroRequest {
+  int32 id = 1;
+  string nome = 2;
+}
+
+message GetGeneroRequest {
+  int32 id = 1;
+}
+
+message DeleteGeneroRequest {
+  int32 id = 1;
+}
+
+message GeneroList {
+  repeated Genero generos = 1;
+}
+
+// Mensagens comuns
+message Empty {}
+
+message SuccessResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// Serviços
+service FilmeService {
+  rpc ListFilmes(Empty) returns (FilmeList);
+  rpc GetFilme(GetFilmeRequest) returns (Filme);
+  rpc CreateFilme(CreateFilmeRequest) returns (Filme);
+  rpc UpdateFilme(UpdateFilmeRequest) returns (Filme);
+  rpc DeleteFilme(DeleteFilmeRequest) returns (SuccessResponse);
+  rpc GetFilmeAtores(GetFilmeAtoresRequest) returns (AtorList);
+  rpc AddAtorToFilme(AddAtorToFilmeRequest) returns (SuccessResponse);
+}
+
+service AtorService {
+  rpc ListAtores(Empty) returns (AtorList);
+  rpc GetAtor(GetAtorRequest) returns (Ator);
+  rpc CreateAtor(CreateAtorRequest) returns (Ator);
+  rpc UpdateAtor(UpdateAtorRequest) returns (Ator);
+  rpc DeleteAtor(DeleteAtorRequest) returns (SuccessResponse);
+}
+
+service GeneroService {
+  rpc ListGeneros(Empty) returns (GeneroList);
+  rpc GetGenero(GetGeneroRequest) returns (Genero);
+  rpc CreateGenero(CreateGeneroRequest) returns (Genero);
+  rpc UpdateGenero(UpdateGeneroRequest) returns (Genero);
+  rpc DeleteGenero(DeleteGeneroRequest) returns (SuccessResponse);
+}
