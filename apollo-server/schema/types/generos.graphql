@@ -1,0 +1,26 @@
+type Genero {
+  id: ID!
+  nome: String!
+  createdAt: String!
+  updatedAt: String!
+  filmes: [Filme!]
+}
+
+input GeneroInput {
+  nome: String!
+}
+
+input GeneroUpdateInput {
+  nome: String
+}
+
+extend type Query {
+  generos: [Genero!]!
+  genero(id: ID!): Genero
+}
+
+extend type Mutation {
+  criarGenero(input: GeneroInput!): Genero!
+  atualizarGenero(id: ID!, input: GeneroUpdateInput!): Genero
+  excluirGenero(id: ID!): Boolean!
+}

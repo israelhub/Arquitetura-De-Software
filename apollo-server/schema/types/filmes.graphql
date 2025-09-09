@@ -1,0 +1,33 @@
+type Filme {
+  id: ID!
+  titulo: String!
+  ano: Int!
+  createdAt: String!
+  updatedAt: String!
+  atores: [Ator!]
+  generos: [Genero!]
+}
+
+input FilmeInput {
+  titulo: String!
+  ano: Int!
+}
+
+input FilmeUpdateInput {
+  titulo: String
+  ano: Int
+}
+
+extend type Query {
+  filmes: [Filme!]!
+  filme(id: ID!): Filme
+}
+
+extend type Mutation {
+  criarFilme(input: FilmeInput!): Filme!
+  atualizarFilme(id: ID!, input: FilmeUpdateInput!): Filme
+  excluirFilme(id: ID!): Boolean!
+  adicionarAtoresEmFilme(filmeId: ID!, atorIds: [ID!]!): Filme
+  removerAtorDeFilme(filmeId: ID!, atorId: ID!): Filme
+  adicionarGenerosEmFilme(filmeId: ID!, generoIds: [ID!]!): Filme
+}

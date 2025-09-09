@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Ator {
+  id              String   @id @default(cuid())
+  nome            String
+  dataNascimento  String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relacionamentos
+  filmes          FilmeAtor[]
+  
+  @@map("atores")
+}
+
+model Filme {
+  id        String   @id @default(cuid())
+  titulo    String
+  ano       Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relacionamentos
+  atores    FilmeAtor[]
+  generos   FilmeGenero[]
+  
+  @@map("filmes")
+}
+
+model Genero {
+  id        String   @id @default(cuid())
+  nome      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relacionamentos
+  filmes    FilmeGenero[]
+  
+  @@map("generos")
+}
+
+// Tabela de relacionamento Many-to-Many entre Filme e Ator
+model FilmeAtor {
+  filmeId String
+  atorId  String
+  
+  filme   Filme @relation(fields: [filmeId], references: [id], onDelete: Cascade)
+  ator    Ator  @relation(fields: [atorId], references: [id], onDelete: Cascade)
+  
+  @@id([filmeId, atorId])
+  @@map("filme_ator")
+}
+
+// Tabela de relacionamento Many-to-Many entre Filme e Genero
+model FilmeGenero {
+  filmeId   String
+  generoId  String
+  
+  filme     Filme  @relation(fields: [filmeId], references: [id], onDelete: Cascade)
+  genero    Genero @relation(fields: [generoId], references: [id], onDelete: Cascade)
+  
+  @@id([filmeId, generoId])
+  @@map("filme_genero")
+}
