@@ -1,0 +1,38 @@
+{
+  "defaultCoin": "bitcoin",
+  "refreshInterval": 10000,
+  "alerts": {
+    "threshold": {
+      "mode": "dynamic",
+      "buyPercentage": -5,
+      "sellPercentage": 5,
+      "staticPrices": {
+        "bitcoin": {
+          "buyPrice": 60000,
+          "sellPrice": 75000
+        },
+        "ethereum": {
+          "buyPrice": 2400,
+          "sellPrice": 2800
+        },
+        "dogecoin": {
+          "buyPrice": 0.20,
+          "sellPrice": 0.30
+        },
+        "solana": {
+          "buyPrice": 120,
+          "sellPrice": 160
+        }
+      }
+    },
+    "variation": {
+      "percentage": 2,
+      "timeWindowMinutes": 5
+    }
+  },
+  "api": {
+    "provider": "coingecko",
+    "baseUrl": "https://api.coingecko.com/api/v3",
+    "apiKey": ""
+  }
+}
