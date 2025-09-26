@@ -1,0 +1,33 @@
+{
+  "name": "product-standardizer",
+  "version": "1.0.0",
+  "description": "Sistema de padronização de produtos de diferentes fornecedores usando design patterns",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "design-patterns",
+    "adapter",
+    "factory",
+    "singleton",
+    "strategy",
+    "builder"
+  ],
+  "author": "Developer",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/xml2js": "^0.4.11",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "xml2js": "^0.6.2"
+  }
+}

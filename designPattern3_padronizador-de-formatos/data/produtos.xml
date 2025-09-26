@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+  <product id="1">
+    <name>Smartphone Samsung Galaxy</name>
+    <price>899.99</price>
+  </product>
+  <product id="2">
+    <name>Notebook Dell Inspiron</name>
+    <price>2499.90</price>
+  </product>
+  <product id="3">
+    <name>Fone de Ouvido Bluetooth</name>
+    <price>159.99</price>
+  </product>
+  <product id="4">
+    <name>Tablet Apple iPad</name>
+    <price>1899.00</price>
+  </product>
+  <product id="5">
+    <name>Mouse Gamer RGB</name>
+    <price>89.90</price>
+  </product>
+  <product id="6">
+    <name>Teclado Mecânico</name>
+    <price>199.90</price>
+  </product>
+  <product id="7">
+    <name>Monitor 24 polegadas</name>
+    <price>649.99</price>
+  </product>
+</products>

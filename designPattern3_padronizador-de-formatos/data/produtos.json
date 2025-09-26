@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "name": "Smartphone Samsung Galaxy",
+    "price": 899.99
+  },
+  {
+    "id": "2",
+    "name": "Notebook Dell Inspiron",
+    "price": 2499.90
+  },
+  {
+    "id": "3",
+    "name": "Fone de Ouvido Bluetooth",
+    "price": 159.99
+  },
+  {
+    "id": "4",
+    "name": "Tablet Apple iPad",
+    "price": 1899.00
+  },
+  {
+    "id": "5",
+    "name": "Mouse Gamer RGB",
+    "price": 89.90
+  }
+]
