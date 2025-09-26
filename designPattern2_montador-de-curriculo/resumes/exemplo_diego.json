@@ -1,0 +1,29 @@
+{
+  "name": "Diego Castro",
+  "contact": "diego.castro@cefet-rj.br",
+  "experiences": [
+    {
+      "position": "Professor",
+      "company": "CEFET-RJ",
+      "period": "2015-2024"
+    },
+    {
+      "position": "Desenvolvedor Senior",
+      "company": "Tech Corp",
+      "period": "2012-2015"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Doutorado em Computação",
+      "institution": "UFRJ",
+      "period": "2019-2023"
+    },
+    {
+      "degree": "Mestrado em Informática",
+      "institution": "PUC-Rio",
+      "period": "2010-2012"
+    }
+  ],
+  "createdAt": "2025-09-23T02:04:25.344Z"
+}

@@ -1,0 +1,16 @@
+CURRÍCULO
+=========
+
+Nome: Diego Castro
+Contato: diego.castro@cefet-rj.br
+
+EXPERIÊNCIA PROFISSIONAL
+------------------------
+1. Professor - CEFET-RJ (2015-2024)
+2. Desenvolvedor Senior - Tech Corp (2012-2015)
+
+FORMAÇÃO ACADÊMICA
+------------------
+1. Doutorado em Computação - UFRJ (2019-2023)
+2. Mestrado em Informática - PUC-Rio (2010-2012)
+

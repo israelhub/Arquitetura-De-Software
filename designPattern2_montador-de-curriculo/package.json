@@ -1,0 +1,21 @@
+{
+  "name": "desafio-design-pattern-2",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/cli/index.js",
+    "dev": "ts-node src/cli/index.ts",
+    "lint": "echo 'No linter configured'"
+  },
+  "dependencies": {
+    "inquirer": "^9.3.7"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.9",
+    "@types/node": "^20.12.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
